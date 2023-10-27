@@ -251,7 +251,7 @@ $txtColor: #4d5053;
     position: relative;
   }
 
-  &__card:nth-child(2n) {
+  &__card:nth-child(2) {
     background-color: #f4f0ec;
   }
 
@@ -300,7 +300,7 @@ $txtColor: #4d5053;
 }
 
 .footer {
-  margin-bottom: 134px;
+  margin-bottom: 118px;
 
   &__flex {
     @include df(space-between, flex-start, 0);

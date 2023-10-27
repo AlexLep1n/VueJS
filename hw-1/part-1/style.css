@@ -268,7 +268,7 @@
   width: 382px;
   position: relative;
 }
-.news__card:nth-child(2n) {
+.news__card:nth-child(2) {
   background-color: #f4f0ec;
 }
 .news__img {
@@ -319,7 +319,7 @@
 }
 
 .footer {
-  margin-bottom: 134px;
+  margin-bottom: 118px;
 }
 .footer__flex {
   display: flex;
