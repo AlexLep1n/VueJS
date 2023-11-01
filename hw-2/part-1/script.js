@@ -1,6 +1,6 @@
 "use strict";
 new Vue({
-  el: ".news__cards",
+  el: ".articles__cards",
   data: {
     articles: [
       {

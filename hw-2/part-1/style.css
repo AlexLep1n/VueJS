@@ -220,10 +220,10 @@
   letter-spacing: 0.22px;
 }
 
-.news {
+.articles {
   margin-bottom: 96px;
 }
-.news__desc {
+.articles__desc {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -231,7 +231,7 @@
   flex-direction: column;
   margin-bottom: 52px;
 }
-.news__heading {
+.articles__heading {
   color: #292f36;
   font-family: "DM Serif Display", serif;
   font-size: 50px;
@@ -240,7 +240,7 @@
   line-height: 125%;
   letter-spacing: 1px;
 }
-.news__txt {
+.articles__txt {
   color: #4d5053;
   font-family: "Jost", sans-serif;
   font-size: 22px;
@@ -250,13 +250,14 @@
   letter-spacing: 0.22px;
   width: 811px;
 }
-.news__cards {
+.articles__cards {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 27px;
+  flex-wrap: wrap;
 }
-.news__card {
+.articles__card {
   border-radius: 62px;
   border: 1px solid #e7e7e7;
   padding: 21px;
@@ -269,17 +270,17 @@
   height: 521px;
   position: relative;
 }
-.news__card:nth-child(2) {
+.articles__card:nth-child(2) {
   background-color: #f4f0ec;
 }
-.news__card:nth-child(2) circle {
+.articles__card:nth-child(2) circle {
   fill: #fff;
 }
-.news__img {
+.articles__img {
   border: none;
   border-radius: 45px 45px 0 0;
 }
-.news__title {
+.articles__title {
   position: absolute;
   top: 249px;
   left: 41px;
@@ -294,17 +295,17 @@
   background-color: #fff;
   padding: 4px 11px 8px;
 }
-.news__card-box {
+.articles__card-box {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 0;
   margin-bottom: 16px;
 }
-.news__card-desc {
+.articles__card-desc {
   width: 290px;
 }
-.news__card-heading {
+.articles__card-heading {
   color: #292f36;
   font-family: "DM Serif Display", serif;
   font-size: 25px;
@@ -313,12 +314,12 @@
   letter-spacing: 0.5px;
   margin-bottom: 39px;
 }
-.news__card-txt {
+.articles__card-txt {
   color: #4d5053;
   font-family: "Jost", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 150%; /* 24px */
+  line-height: 150%;
   letter-spacing: 0.16px;
 }
 
@@ -463,4 +464,110 @@
 }
 .page-title__link:first-child::before {
   content: "";
+}
+
+.post {
+  margin-bottom: 150px;
+}
+.post__title {
+  color: #292f36;
+  font-family: "DM Serif Display", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: 1px;
+  margin-bottom: 27px;
+}
+.post__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  border: 1px solid #e7e7e7;
+  border-radius: 62px;
+  padding: 22px;
+}
+.post__img {
+  border: none;
+  border-radius: 50px;
+}
+.post__content {
+  padding: 51px 34px 51px 0;
+}
+.post__content-title {
+  color: #292f36;
+  font-family: "DM Serif Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+}
+.post__content-first-txt, .post__content-second-txt {
+  color: #4d5053;
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+  margin-bottom: 41px;
+}
+.post__date-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.post__date-txt {
+  color: #4d5053;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+}
+
+.articles__mb {
+  margin-bottom: 200px;
+}
+.articles__section-title {
+  color: #292f36;
+  font-family: "DM Serif Display", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+.articles__cards_mb {
+  margin-bottom: 51px;
+}
+.articles__pagination-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.articles__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 268px;
+}
+.articles__pagination-link {
+  color: #4d5053;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-weight: 500;
+  line-height: 150%;
+  border: 1px solid #cda274;
+  padding: 13px 15px 12px 17px;
+  border-radius: 100px;
+}
+.articles__pagination-link:first-of-type {
+  border: none;
+  background-color: #f4f0ec;
+  padding: 14px 17px 14px 18px;
 }/*# sourceMappingURL=style.css.map */
