@@ -1,0 +1,28 @@
+$dmSerifD: "DM Serif Display", serif;
+$jostFf: "Jost", sans-serif;
+$headingColor: #292f36;
+$txtColor: #4d5053;
+
+@mixin df($jc, $ai, $g) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin fsw($ff, $fs) {
+  font-family: $ff;
+  font-size: $fs;
+  font-weight: 400;
+}
+.header-blog {
+  margin: 44px 0;
+}
+
+.blog-banner {
+  background-image: url(img/blog-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 351px;
+  margin-bottom: 200px;
+}
