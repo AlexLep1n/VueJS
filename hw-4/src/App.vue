@@ -1,25 +1,25 @@
 <template>
   <div id="app">
-    <HeaderPage></HeaderPage>
-    <BlogArticle></BlogArticle>
-    <FooterPage></FooterPage>
-    <ProductList></ProductList>
+    <!-- <BlogPage></BlogPage> -->
+    <!-- <ArticlesPage></ArticlesPage> -->
+    <!-- <ProductList></ProductList> -->
+    <ProjectPage></ProjectPage>
   </div>
 </template>
 
 <script>
-import ProductList from './components/ProductList.vue'
-import BlogArticle from './components/pages/BlogArticle.vue'
-import HeaderPage from './components/block/HeaderPage.vue'
-import FooterPage from './components/block/FooterPage.vue'
+// import ProductList from './components/ProductList.vue'
+// import BlogPage from './components/pages/BlogPage.vue'
+// import ArticlesPage from './components/pages/ArticlesPage.vue'
+import ProjectPage from './components/pages/ProjectPage.vue'
 
 export default {
   name: 'App',
   components: {
-    ProductList,
-    BlogArticle,
-    HeaderPage,
-    FooterPage
+    // ProductList,
+    // ArticlesPage
+    // BlogPage
+    ProjectPage
   }
 }
 </script>

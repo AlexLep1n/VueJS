@@ -1,5 +1,5 @@
 <template>
-  <header class="header header-blog">
+  <header class="header header_padding">
     <nav class="nav nav__flex container">
       <a href="index.html" class="nav__left">
         <img src="img/nav__img.svg" alt="logo">
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'HeaderPage',
+  name: 'HeaderComp',
 
   data () {
     return {
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-blog {
+.header_padding {
   margin: 44px 0;
 }
 </style>

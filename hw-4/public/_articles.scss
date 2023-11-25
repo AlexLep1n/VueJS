@@ -1,0 +1,169 @@
+$dmSerifD: "DM Serif Display", serif;
+$jostFf: "Jost", sans-serif;
+$headingColor: #292f36;
+$txtColor: #4d5053;
+
+@mixin df($jc, $ai, $g) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin fsw($ff, $fs) {
+  font-family: $ff;
+  font-size: $fs;
+  font-weight: 400;
+}
+
+.header-articles {
+  padding: 44px 0;
+}
+
+.page-title {
+  background-image: url(img/page-title-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 356px;
+  @include df(center, flex-end, 0);
+  margin-bottom: 200px;
+
+  &__content {
+    @include df(center, center, 0);
+    flex-direction: column;
+    width: 503px;
+    height: 178px;
+    background-color: #fff;
+    border: none;
+    border-radius: 37px 37px 0 0;
+  }
+
+  &__heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 50px);
+    line-height: 125%;
+  }
+
+  &__breadcrumps {
+    @include df(space-between, center, 5px);
+  }
+
+  &__link {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 150%;
+    letter-spacing: 0.22px;
+  }
+
+  &__link::before {
+    content: "/";
+    margin-right: 5px;
+  }
+
+  &__link:first-child::before {
+    content: "";
+  }
+}
+
+.post {
+  margin-bottom: 150px;
+
+  &__title {
+    color: $headingColor;
+    @include fsw($dmSerifD, 50px);
+    line-height: 125%;
+    letter-spacing: 1px;
+    margin-bottom: 27px;
+  }
+
+  &__card {
+    @include df(center, center, 65px);
+    border: 1px solid #e7e7e7;
+    border-radius: 62px;
+    padding: 22px;
+  }
+
+  &__img {
+    border: none;
+    border-radius: 50px;
+  }
+
+  &__content {
+    padding: 51px 34px 51px 0;
+  }
+
+  &__content-title {
+    color: $headingColor;
+    @include fsw($dmSerifD, 25px);
+    line-height: 125%;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+  }
+
+  &__content-first-txt,
+  &__content-second-txt {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 150%;
+    letter-spacing: 0.22px;
+    margin-bottom: 41px;
+  }
+
+  &__date-box {
+    @include df(space-between, center, 0);
+  }
+
+  &__date-txt {
+    color: $txtColor;
+    @include fsw($jostFf, 16px);
+    line-height: 150%;
+    letter-spacing: 0.16px;
+  }
+}
+
+.articles {
+  &__mb {
+    margin-bottom: 200px;
+  }
+
+  &__section-title {
+    color: $headingColor;
+    @include fsw($dmSerifD, 50px);
+    line-height: 125%;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+  }
+
+  &__cards_mb {
+    margin-bottom: 51px;
+  }
+
+  &__arrow {
+    cursor: pointer;
+  }
+
+  &__pagination-flex {
+    @include df(center, center, 0);
+  }
+
+  &__pagination {
+    @include df(center, center, 20px);
+    width: 268px;
+  }
+
+  &__pagination-link {
+    color: $txtColor;
+    @include fsw($jostFf, 16px);
+    font-weight: 500;
+    line-height: 150%;
+    border: 1px solid #cda274;
+    padding: 13px 15px 12px 17px;
+    border-radius: 100px;
+  }
+
+  &__pagination-link:first-of-type {
+    border: none;
+    background-color: #f4f0ec;
+    padding: 14px 17px 14px 18px;
+  }
+}
