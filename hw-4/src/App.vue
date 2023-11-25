@@ -1,11 +1,26 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <HeaderPage></HeaderPage>
+    <BlogArticle></BlogArticle>
+    <FooterPage></FooterPage>
+    <ProductList></ProductList>
+  </div>
 </template>
 
 <script>
+import ProductList from './components/ProductList.vue'
+import BlogArticle from './components/pages/BlogArticle.vue'
+import HeaderPage from './components/block/HeaderPage.vue'
+import FooterPage from './components/block/FooterPage.vue'
+
 export default {
   name: 'App',
-  components: {}
+  components: {
+    ProductList,
+    BlogArticle,
+    HeaderPage,
+    FooterPage
+  }
 }
 </script>
 

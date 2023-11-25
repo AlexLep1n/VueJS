@@ -1,0 +1,385 @@
+$dmSerifD: "DM Serif Display", serif;
+$jostFf: "Jost", sans-serif;
+$headingColor: #292f36;
+$txtColor: #4d5053;
+
+@mixin df($jc, $ai, $g) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin fsw($ff, $fs) {
+  font-family: $ff;
+  font-size: $fs;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.header {
+  margin-top: 53px;
+  margin-bottom: 57px;
+}
+
+.nav {
+  &__flex {
+    @include df(space-between, center, 0);
+  }
+
+  &__left {
+    @include df(space-between, center, 10px);
+  }
+
+  &__left-title {
+    color: $headingColor;
+    @include fsw($dmSerifD, 40px);
+    line-height: 125%;
+  }
+
+  &__right {
+    width: 243px;
+    @include df(space-between, center, 0);
+  }
+
+  &__right-link {
+    color: $headingColor;
+    @include fsw($jostFf, 20px);
+    line-height: 125%;
+  }
+}
+
+.unique {
+  margin-bottom: 96px;
+
+  &__bg {
+    background-image: url(img/unique__img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+  }
+
+  &__flex {
+    @include df(space-between, flex-start, 0);
+    flex-direction: column;
+    padding: 208px 716px 208px 52px;
+  }
+
+  &__heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 65px);
+    line-height: 125%;
+    margin-bottom: 18px;
+  }
+
+  &__txt {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 150%;
+    letter-spacing: 0.22px;
+    margin-bottom: 21px;
+  }
+  &__link {
+    color: #fff;
+    @include fsw($jostFf, 18px);
+    @include df(space-between, center, 10px);
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: 0.36px;
+    padding: 26px 48px;
+    background-color: $headingColor;
+    border: none;
+    border-radius: 18px;
+  }
+}
+
+.projects {
+  margin-bottom: 40px;
+
+  &__desc {
+    @include df(none, center, 8px);
+    flex-direction: column;
+    margin-bottom: 93px;
+  }
+
+  &__heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 50px);
+    text-align: center;
+    line-height: 125%;
+    letter-spacing: 1px;
+  }
+
+  &__txt {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: 0.22px;
+    width: 737px;
+  }
+
+  &__cards {
+    @include df(space-between, center, 0);
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    margin-bottom: 56px;
+    width: 548px;
+  }
+
+  &__img {
+    border: none;
+    margin-bottom: 24px;
+  }
+
+  &__img-top-left {
+    border-radius: 0 80px 0 0;
+  }
+  &__img-top-right {
+    border-radius: 80px 0 0 0;
+  }
+  &__img-bot-left {
+    border-radius: 0 0 80px 0;
+  }
+  &__img-bot-right {
+    border-radius: 0 0 0 80px;
+  }
+
+  &__card-box {
+    @include df(space-between, center, 0);
+  }
+
+  &__card-heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 25px);
+    line-height: 125%;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  &__card-txt {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+  }
+}
+
+.results {
+  background-color: #f4f0ec;
+  padding: 151px 0;
+  margin-bottom: 96px;
+
+  &__flex {
+    @include df(space-between, center, 76px);
+  }
+
+  &__item {
+    @include df(space-between, center, 16px);
+    flex-direction: column;
+    border-left: 1px solid #cda274;
+    padding-left: 76px;
+  }
+
+  &__item:first-child {
+    border: none;
+  }
+
+  &__number {
+    color: #cda274;
+    @include fsw($dmSerifD, 85px);
+    line-height: 125%;
+    letter-spacing: 1.7px;
+  }
+
+  &__desc {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 150%;
+    letter-spacing: 0.22px;
+  }
+}
+
+.articles {
+  margin-bottom: 96px;
+
+  &__desc {
+    @include df(space-between, center, 12px);
+    flex-direction: column;
+    margin-bottom: 52px;
+  }
+
+  &__heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 50px);
+    text-align: center;
+    line-height: 125%;
+    letter-spacing: 1px;
+  }
+
+  &__txt {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: 0.22px;
+    width: 811px;
+  }
+
+  &__cards {
+    @include df(space-between, center, 27px);
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    border-radius: 62px;
+    border: 1px solid #e7e7e7;
+    padding: 21px;
+    @include df(space-between, center, 21px);
+    flex-direction: column;
+    width: 382px;
+    height: 521px;
+    position: relative;
+  }
+
+  &__card:nth-child(2) {
+    background-color: #f4f0ec;
+  }
+
+  &__card:nth-child(2) circle {
+    fill: #fff;
+  }
+
+  &__img {
+    border: none;
+    border-radius: 45px 45px 0 0;
+  }
+
+  &__title {
+    position: absolute;
+    top: 249px;
+    left: 41px;
+    color: $txtColor;
+    @include fsw($jostFf, 16px);
+    line-height: 150%;
+    letter-spacing: 0.16px;
+    border: none;
+    border-radius: 8px 8px 8px 0;
+    background-color: #fff;
+    padding: 4px 11px 8px;
+  }
+
+  &__card-box {
+    @include df(space-between, flex-end, 0);
+    margin-bottom: 16px;
+  }
+
+  &__card-desc {
+    width: 290px;
+  }
+
+  &__card-heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 25px);
+    line-height: 125%;
+    letter-spacing: 0.5px;
+    margin-bottom: 39px;
+  }
+
+  &__card-txt {
+    color: $txtColor;
+    @include fsw($jostFf, 16px);
+    line-height: 150%;
+    letter-spacing: 0.16px;
+  }
+}
+
+.footer {
+  margin-bottom: 118px;
+
+  &__flex {
+    @include df(space-between, flex-start, 0);
+  }
+
+  &__info {
+    width: 393px;
+    margin-right: 101px;
+  }
+
+  &__logo {
+    @include df(flex-start, center, 10px);
+    margin-bottom: 18px;
+  }
+
+  &__info-txt {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 150%; /* 24px */
+    letter-spacing: 0.22px;
+    margin-bottom: 31px;
+  }
+
+  &__fa-links {
+    display: flex;
+    gap: 54px;
+  }
+
+  .fa-twitter,
+  .fa-linkedin-in {
+    font-size: 20px;
+  }
+
+  &__pages {
+    @include df(space-between, flex-start, 0);
+    flex-direction: column;
+    margin-right: 303px;
+  }
+
+  &__pages-heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 25px);
+    line-height: 125%; /* 31.25px */
+    margin-bottom: 10px;
+  }
+
+  &__pages-link {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 300%;
+    letter-spacing: 0.22px;
+  }
+
+  &__contacts {
+    @include df(space-between, flex-start, 0);
+    flex-direction: column;
+    width: 258px;
+  }
+
+  &__contacts-heading {
+    color: $headingColor;
+    @include fsw($dmSerifD, 25px);
+    line-height: 125%;
+    margin-bottom: 26px;
+  }
+
+  &__contacts-info {
+    color: $txtColor;
+    @include fsw($jostFf, 22px);
+    line-height: 150%;
+    letter-spacing: 0.22px;
+    margin-bottom: 27px;
+  }
+}
+
+@import "blog";
