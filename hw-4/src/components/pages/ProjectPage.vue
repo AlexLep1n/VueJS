@@ -2,9 +2,7 @@
   <div>
     <HeaderComp></HeaderComp>
     <PageTitle :title="title" :imgUrl="imgBackgroundUrl"></PageTitle>
-    <div class="project-page">
-      <ProjectsBlock></ProjectsBlock>
-    </div>
+    <ProjectsBlock></ProjectsBlock>
     <FooterComp></FooterComp>
   </div>
 </template>

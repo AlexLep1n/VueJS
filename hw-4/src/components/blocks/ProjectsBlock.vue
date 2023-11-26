@@ -1,18 +1,20 @@
 <template>
   <section class="project">
     <div class="project__flex container">
-      <TabsPart @changeTab="selectedTab"></TabsPart>
-      <div v-for="(project, index) in filteredProjects" :key="index" class="project__card">
-        <img :src="project.imgUrl" :alt="project.imgAlt" class="project__img">
-        <div class="project__card-box">
-          <div class="project__desc">
-            <h4 class="project__heading">{{ project.heading }}</h4>
-            <p class="project__breadcrumps">{{ project.breadcrumps }}</p>
+      <TabsPart @changeTab="selectTab"></TabsPart>
+      <div class="project__cards">
+        <div v-for="(project, index) in filterProjects" :key="index" class="project__card">
+          <img :src="project.imgUrl" :alt="project.imgAlt" class="project__img">
+          <div class="project__card-box">
+            <div class="project__desc">
+              <h4 class="project__heading">{{ project.heading }}</h4>
+              <p class="project__breadcrumps">{{ project.breadcrumps }}</p>
+            </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none">
+                <circle cx="35" cy="35" r="35" fill="#F4F0EC"/>
+                <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none">
-              <circle cx="35" cy="35" r="35" fill="#F4F0EC"/>
-              <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </div>
       </div>
     </div>
@@ -83,19 +85,38 @@ export default {
           imgAlt: 'Modern Room',
           heading: 'Modern Bedroom',
           breadcrumps: 'Decor / Artchitecture'
+        },
+        {
+          tab: 'Bathroom',
+          imgUrl: './img/project/bedroom-right-4.jpg',
+          imgAlt: 'Bathroom',
+          heading: 'Modern Bathroom',
+          breadcrumps: 'Decor / Artchitecture'
+        },
+        {
+          tab: 'Kitchan',
+          imgUrl: './img/project/bedroom-left-3.jpg',
+          imgAlt: 'Kitchan',
+          heading: 'Modern Kitchan',
+          breadcrumps: 'Decor / Artchitecture'
         }
       ],
-      filteredProjects: []
+      filterProjects: [],
+      drawFlag: false
     }
   },
 
-  computed: {
-
+  beforeMount () {
+    if (!this.drawFlag) {
+      this.filterProjects = [...this.projects]
+    } else {
+      this.selectTab()
+    }
   },
-
   methods: {
-    selectedTab (clickTab) {
-      this.filteredProjects = this.projects.filter(item => item.tab === clickTab.tabName)
+    selectTab (clickTab) {
+      this.drawFlag = true
+      this.filterProjects = this.projects.filter(item => item.tab === clickTab.tabName)
     }
   },
 
@@ -125,9 +146,16 @@ export default {
     font-weight: 400;
   }
   .project {
+    margin-bottom: 200px;
     &__flex {
-      @include df(space-between, flex-start, 29px);
+      @include df(center, center, 61px);
+      flex-direction: column;
+    }
+
+    &__cards {
+      @include df(flex-start, flex-start, 29px);
       flex-wrap: wrap;
+      width: 100%;
     }
 
     &__card {

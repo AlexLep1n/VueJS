@@ -44,7 +44,8 @@ export default {
         this.tabs[index].clicked = true
       }
       const data = {
-        tabName: this.currentTabName
+        tabName: this.currentTabName,
+        flag: true
       }
       this.$emit('changeTab', data)
     }
@@ -52,7 +53,11 @@ export default {
 
   // computed: {
   //   filteredTabs () {
-  //     return this.tabs.filter(item => item.tabName)
+  //     if (this.clickTab()) {
+  //       return this.clickTab()
+  //     } else {
+  //       return this.tabs
+  //     }
   //   }
   // }
 }
