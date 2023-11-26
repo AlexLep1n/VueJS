@@ -44,8 +44,7 @@ export default {
         this.tabs[index].clicked = true
       }
       const data = {
-        tabName: this.currentTabName,
-        flag: true
+        tabName: this.currentTabName
       }
       this.$emit('changeTab', data)
     }
