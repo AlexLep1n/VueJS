@@ -2,7 +2,9 @@
   <div>
     <HeaderComp></HeaderComp>
     <PageTitle :title="title" :imgUrl="imgBackgroundUrl"></PageTitle>
-    <TabsPart></TabsPart>
+    <div class="project-page">
+      <ProjectsBlock></ProjectsBlock>
+    </div>
     <FooterComp></FooterComp>
   </div>
 </template>
@@ -11,7 +13,7 @@
 
 import HeaderComp from '@/components/blocks/HeaderComp.vue'
 import PageTitle from '@/components/blocks/PageTitle.vue'
-import TabsPart from '@/components/parts/TabsPart.vue'
+import ProjectsBlock from '@/components/blocks/ProjectsBlock.vue'
 import FooterComp from '@/components/blocks/FooterComp.vue'
 
 export default {
@@ -31,12 +33,18 @@ export default {
   components: {
     HeaderComp,
     PageTitle,
-    TabsPart,
+    ProjectsBlock,
     FooterComp
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+  .project-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 61px;
+  }
 </style>

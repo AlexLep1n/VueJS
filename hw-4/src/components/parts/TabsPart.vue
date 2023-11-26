@@ -1,6 +1,6 @@
 <template>
   <div class="tabs">
-    <button v-for="(tab, index) in tabs" :key="index" :class="{tab_active: tab.clicked, tab: !tab.clicked}">{{ tab.tabName }}</button>
+    <button v-for="(tab, index) in tabs" :key="index" :class="{tab_active: tab.clicked, tab: !tab.clicked}" @click="clickTab(index)">{{ tab.tabName }}</button>
   </div>
 </template>
 
@@ -27,13 +27,34 @@ export default {
           tabName: 'Living Area',
           clicked: false
         }
-      ]
+      ],
+      currentTabName: 'Bed Room',
+      currentTabIndex: 1
     }
   },
 
   methods: {
-
+    clickTab (index) {
+      this.currentTabName = this.tabs[index].tabName
+      if (index !== this.currentTabIndex) {
+        this.tabs[index].clicked = true
+        this.tabs[this.currentTabIndex].clicked = false
+        this.currentTabIndex = index
+      } else {
+        this.tabs[index].clicked = true
+      }
+      const data = {
+        tabName: this.currentTabName
+      }
+      this.$emit('changeTab', data)
+    }
   }
+
+  // computed: {
+  //   filteredTabs () {
+  //     return this.tabs.filter(item => item.tabName)
+  //   }
+  // }
 }
 </script>
 
@@ -58,7 +79,7 @@ export default {
   }
 
  .tabs {
-  @include df(space-between, center, 96px);
+  @include df(space-between, center, 0);
   border: 1px solid #CDA274;
   border-radius: 18px;
   width: 880px;
