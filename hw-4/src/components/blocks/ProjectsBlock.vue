@@ -108,7 +108,7 @@ export default {
 
   beforeMount () {
     if (!this.drawFlag) {
-      this.filterProjects = [...this.projects]
+      this.filterProjects = this.projects.filter(item => item.tab === 'Bathroom')
     } else {
       this.selectTab()
     }

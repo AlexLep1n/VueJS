@@ -13,11 +13,11 @@ export default {
       tabs: [
         {
           tabName: 'Bathroom',
-          clicked: false
+          clicked: true
         },
         {
           tabName: 'Bed Room',
-          clicked: true
+          clicked: false
         },
         {
           tabName: 'Kitchan',
@@ -28,8 +28,8 @@ export default {
           clicked: false
         }
       ],
-      currentTabName: 'Bed Room',
-      currentTabIndex: 1
+      currentTabName: 'Bathroom',
+      currentTabIndex: 0
     }
   },
 
