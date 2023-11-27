@@ -17,12 +17,14 @@
           </div>
         </div>
       </div>
+      <PaginationPart></PaginationPart>
     </div>
   </section>
 </template>
 
 <script>
 import TabsPart from '@/components/parts/TabsPart.vue'
+import PaginationPart from '@/components/parts/PaginationPart.vue'
 
 export default {
   name: 'ProjectsBlock',
@@ -121,7 +123,8 @@ export default {
   },
 
   components: {
-    TabsPart
+    TabsPart,
+    PaginationPart
   }
 }
 </script>
