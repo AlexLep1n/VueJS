@@ -1,38 +1,35 @@
 <template>
   <div>
-    <HeaderPage></HeaderPage>
+    <HeaderComp></HeaderComp>
     <BannerComp :banner-url="banner"></BannerComp>
     <BlogComp></BlogComp>
-    <FooterPage></FooterPage>
+    <FooterComp></FooterComp>
   </div>
 </template>
 
 <script>
-
-import HeaderPage from '@/components/blocks/HeaderPage.vue'
-import BannerComp from '@/components/blocks/BannerComp.vue'
-import BlogComp from '@/components/blocks/BlogComp.vue'
-import FooterPage from '@/components/blocks/FooterPage.vue'
+import HeaderComp from "@/components/blocks/HeaderComp.vue";
+import BannerComp from "@/components/blocks/BannerComp.vue";
+import BlogComp from "@/components/blocks/BlogComp.vue";
+import FooterComp from "@/components/blocks/FooterComp.vue";
 
 export default {
-  name: 'BlogPage',
-  data () {
+  name: "BlogPage",
+  data() {
     return {
-      banner: 'url(./img/blog-banner.jpg)'
-    }
+      banner: "url(./img/blog-banner.jpg)",
+    };
   },
-  methods: {
-  },
+  methods: {},
 
   components: {
-    HeaderPage,
+    HeaderComp,
     BannerComp,
     BlogComp,
-    FooterPage
-  }
-}
+    FooterComp,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

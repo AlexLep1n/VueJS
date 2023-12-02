@@ -3,25 +3,25 @@
     <!-- <BlogPage></BlogPage> -->
     <!-- <ArticlesPage></ArticlesPage> -->
     <!-- <ProductList></ProductList> -->
-    <ProjectPage></ProjectPage>
+    <!-- <ProjectPage></ProjectPage> -->
   </div>
 </template>
 
 <script>
 // import ProductList from './components/ProductList.vue'
-// import BlogPage from './components/pages/BlogPage.vue'
-// import ArticlesPage from './components/pages/ArticlesPage.vue'
-import ProjectPage from './components/pages/ProjectPage.vue'
+// import BlogPage from "./components/pages/BlogPage.vue";
+// import ArticlesPage from "./components/pages/ArticlesPage.vue";
+// import ProjectPage from './components/pages/ProjectPage.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // ProductList,
-    // ArticlesPage
-    // BlogPage
-    ProjectPage
-  }
-}
+    // ArticlesPage,
+    // BlogPage,
+    // ProjectPage
+  },
+};
 </script>
 
 <style lang="scss">

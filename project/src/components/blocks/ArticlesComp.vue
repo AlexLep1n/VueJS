@@ -3,19 +3,38 @@
     <div class="container">
       <h2 class="articles__section-title">Articles & News</h2>
       <div class="articles__cards articles__cards_mb">
-        <article class="articles__card" v-for="article in articles" :key="article.id">
-          <img class="articles__img" :src="article.imgUrl" :alt="article.imgAlt">
-          <h4 class="articles__title">{{article.imgTitle}}</h4>
+        <article
+          class="articles__card"
+          v-for="article in newsArticles"
+          :key="article.id"
+        >
+          <img
+            class="articles__img"
+            :src="article.imgUrl"
+            :alt="article.imgAlt"
+          />
+          <h4 class="articles__title">{{ article.imgTitle }}</h4>
           <div class="articles__card-box">
             <div class="articles__card-desc">
-              <h3 class="articles__card-heading">{{article.cardHeading}}</h3>
-              <p class="articles__card-txt">{{article.cardDate}}</p>
+              <h3 class="articles__card-heading">{{ article.cardHeading }}</h3>
+              <p class="articles__card-txt">{{ article.cardDate }}</p>
             </div>
-            <svg class="articles__arrow" xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53"
-              fill="none">
+            <svg
+              class="articles__arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="52"
+              height="53"
+              viewBox="0 0 52 53"
+              fill="none"
+            >
               <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
-              <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813"
+                stroke="#292F36"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
         </article>
@@ -26,10 +45,21 @@
           <a href="#" class="articles__pagination-link">02</a>
           <a href="#" class="articles__pagination-link">03</a>
           <a href="#" class="articles__pagination-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="53"
+              height="52"
+              viewBox="0 0 53 52"
+              fill="none"
+            >
               <circle cx="26.5" cy="26" r="25.5" stroke="#CDA274" />
-              <path d="M23.5571 32L29.5 25.3143L23.5571 18.6286" stroke="#292F36" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M23.5571 32L29.5 25.3143L23.5571 18.6286"
+                stroke="#292F36"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </a>
         </div>
@@ -39,70 +69,22 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  name: 'ArticlesComp',
+  name: "ArticlesComp",
 
-  data () {
-    return {
-      articles: [
-        {
-          imgUrl: 'img/news__img-1.png',
-          imgAlt: 'kitchen',
-          imgTitle: 'Kitchan Design',
-          cardHeading: 'Let’s Get Solution For Building Construction Work',
-          cardDate: '26 December,2022'
-        },
-        {
-          imgUrl: 'img/news__img-2.png',
-          imgAlt: 'kitchen',
-          imgTitle: 'Living Design',
-          cardHeading: 'Low Cost Latest Invented Interior Designing Ideas',
-          cardDate: '22 December,2022'
-        },
-        {
-          imgUrl: 'img/news__img-3.png',
-          imgAlt: 'kitchen',
-          imgTitle: 'Interior Design',
-          cardHeading: 'Best For Any Office & Business Interior Solution',
-          cardDate: '25 December,2022'
-        },
-        {
-          imgUrl: 'img/news__img-4.png',
-          imgAlt: 'kitchen',
-          imgTitle: 'Kitchan Design',
-          cardHeading: 'Let’s Get Solution For Building Construction Work',
-          cardDate: '26 December,2022'
-        },
-        {
-          imgUrl: 'img/news__img-5.png',
-          imgAlt: 'kitchen',
-          imgTitle: 'Living Design',
-          cardHeading: 'Low Cost Latest Invented Interior Designing Ideas',
-          cardDate: '22 December,2022'
-        },
-        {
-          imgUrl: 'img/news__img-6.png',
-          imgAlt: 'kitchen',
-          imgTitle: 'Interior Design',
-          cardHeading: 'Best For Any Office & Business Interior Solution',
-          cardDate: '25 December,2022'
-        }
-      ]
-    }
+  data() {
+    return {};
   },
 
-  mounted () {
-
+  methods: {},
+  computed: {
+    ...mapGetters(["newsArticles"]),
   },
-
-  methods: {
-
-  }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
 $dmSerifD: "DM Serif Display", serif;
 $jostFf: "Jost", sans-serif;
 $headingColor: #292f36;
