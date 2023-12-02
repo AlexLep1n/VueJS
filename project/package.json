@@ -17,6 +17,7 @@
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
     "eslint": "^7.32.0",
@@ -27,5 +28,7 @@
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "vue-template-compiler": "^2.6.14"
-  }
+  },
+  "_id": "hw-4@0.1.0",
+  "readme": "ERROR: No README data found!"
 }
