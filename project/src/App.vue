@@ -4,22 +4,22 @@
     <!-- <ArticlesPage></ArticlesPage> -->
     <!-- <ProductList></ProductList> -->
     <!-- <ProjectPage></ProjectPage> -->
+    <ProjectDetailsPage></ProjectDetailsPage>
   </div>
 </template>
 
 <script>
+import ProjectDetailsPage from "./components/pages/ProjectDetailsPage.vue";
 // import ProductList from './components/ProductList.vue'
 // import BlogPage from "./components/pages/BlogPage.vue";
 // import ArticlesPage from "./components/pages/ArticlesPage.vue";
-// import ProjectPage from './components/pages/ProjectPage.vue'
+// import ProjectPage from "./components/pages/ProjectPage.vue";
 
 export default {
   name: "App",
   components: {
-    // ProductList,
-    // ArticlesPage,
-    // BlogPage,
-    // ProjectPage
+    ProjectDetailsPage,
+    // ProjectPage,
   },
 };
 </script>

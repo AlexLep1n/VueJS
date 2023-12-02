@@ -1,9 +1,4 @@
-import Vue from "vue";
-import Vuex from "vuex";
-
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default {
   state: {
     projects: [
       {
@@ -223,6 +218,20 @@ export default new Vuex.Store({
         clicked: false,
       },
     ],
+    swiperProjectDetails: [
+      {
+        imgUrl: "img/project-details/swiper.jpg",
+        imgAlt: "project details",
+      },
+      {
+        imgUrl: "img/project-details/swiper.jpg",
+        imgAlt: "project details",
+      },
+      {
+        imgUrl: "img/project-details/swiper.jpg",
+        imgAlt: "project details",
+      },
+    ],
     currentTagName: "Kitchen",
     currentTagIndex: 0,
   },
@@ -250,6 +259,9 @@ export default new Vuex.Store({
     },
     newsArticles(state) {
       return state.newsArticles;
+    },
+    swiperProjectDetails(state) {
+      return state.swiperProjectDetails;
     },
 
     // геттеры computed`ов
@@ -289,4 +301,4 @@ export default new Vuex.Store({
   },
   actions: {},
   modules: {},
-});
+};
