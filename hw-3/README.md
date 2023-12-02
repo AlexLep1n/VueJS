@@ -1,4 +1,4 @@
-# hw-4
+# project
 
 ## Project setup
 ```

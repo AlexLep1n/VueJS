@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Details</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
   <script src="https://kit.fontawesome.com/84ef5d59a0.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,50 +21,12 @@
 </head>
 
 <body>
-
-  <header class="header header-blog">
-    <nav class="nav nav__flex container">
-      <a href="index.html" class="nav__left">
-        <img src="img/nav__img.svg" alt="logo">
-        <h3 class="nav__left-title">Interno</h3>
-      </a>
-      <div class="nav__right">
-        <a href="#" class="nav__right-link">Home</a>
-        <a href="#" class="nav__right-link">Project</a>
-        <a href="articles.html" class="nav__right-link">Blog</a>
-      </div>
-    </nav>
-  </header>
-  <section class="blog-banner">
-  </section>
-  <section id="app"></section>
-  <footer class="footer">
-    <div class="footer__flex container">
-      <div class="footer__info">
-        <a href="index.html" class="footer__logo">
-          <img src="img/nav__img.svg" alt="logo">
-          <h3 class="nav__left-title">Interno</h3>
-        </a>
-        <p class="footer__info-txt">It is a long established fact that a reader will be distracted lookings.</p>
-        <div class="footer__fa-links ">
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-linkedin-in"></i>
-        </div>
-      </div>
-      <div class="footer__pages">
-        <h4 class="footer__pages-heading">Pages</h4>
-        <a href="#" class="footer__pages-link">Home</a>
-        <a href="#" class="footer__pages-link">Project</a>
-        <a href="#" class="footer__pages-link">Blog</a>
-      </div>
-      <div class="footer__contacts">
-        <h4 class="footer__contacts-heading">Contact</h4>
-        <p class="footer__contacts-info">55 East Birchwood Ave. Brooklyn, New York 11201</p>
-        <p class="footer__contacts-info">contact@interno.com</p>
-        <p class="footer__contacts-info">(123) 456 - 7890</p>
-      </div>
-    </div>
-  </footer>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
 </body>
 
 </html>
