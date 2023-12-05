@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import BannerComp from "../blocks/BannerComp.vue";
-import FooterComp from "../blocks/FooterComp.vue";
-import HeaderComp from "../blocks/HeaderComp.vue";
-import ProjectDetailsBlock from "../blocks/ProjectDetailsBlock.vue";
+import BannerComp from "@/components/blocks/BannerComp.vue";
+import FooterComp from "@/components/blocks/FooterComp.vue";
+import HeaderComp from "@/components/blocks/HeaderComp.vue";
+import ProjectDetailsBlock from "@/components/blocks/ProjectDetailsBlock.vue";
 
 export default {
   name: "ProjectDetailsPage",

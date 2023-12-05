@@ -1,25 +1,22 @@
 <template>
   <div id="app">
-    <!-- <BlogPage></BlogPage> -->
-    <!-- <ArticlesPage></ArticlesPage> -->
-    <!-- <ProductList></ProductList> -->
-    <!-- <ProjectPage></ProjectPage> -->
-    <ProjectDetailsPage></ProjectDetailsPage>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ProjectDetailsPage from "./components/pages/ProjectDetailsPage.vue";
-// import ProductList from './components/ProductList.vue'
-// import BlogPage from "./components/pages/BlogPage.vue";
-// import ArticlesPage from "./components/pages/ArticlesPage.vue";
-// import ProjectPage from "./components/pages/ProjectPage.vue";
+// import ProjectDetailsPage from "./pages/ProjectDetailsPage.vue";
+// import ProductList from './ProductList.vue'
+// import BlogPage from "./pages/BlogPage.vue";
+// import ArticlesPage from "./pages/ArticlesPage.vue";
+// import MainPage from "./pages/MainPage.vue";
+// import ProjectPage from "./pages/ProjectPage.vue";
+import { RouterView } from "vue-router";
 
 export default {
   name: "App",
   components: {
-    ProjectDetailsPage,
-    // ProjectPage,
+    RouterView,
   },
 };
 </script>
