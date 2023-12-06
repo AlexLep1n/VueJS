@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeaderComp></HeaderComp>
+
     <section class="unique">
       <div class="unique__bg container">
         <div class="unique__flex">
@@ -9,24 +10,7 @@
             There are many variations of the passages of lorem Ipsum
             fromavailable, majority.
           </p>
-          <a href="#" class="unique__link"
-            >Get Started
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="17"
-              viewBox="0 0 18 17"
-              fill="none"
-            >
-              <path
-                d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
-                stroke="#CDA274"
-                stroke-width="2"
-                stroke-linecap="square"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
+          <BlackButtonPart :link="'/blog'" :btnText="btnText"></BlackButtonPart>
         </div>
       </div>
     </section>
@@ -59,11 +43,14 @@ import MainProjectsBlock from "@/components/blocks/MainProjectsBlock.vue";
 import ResultsBlock from "@/components/blocks/ResultsBlock.vue";
 import ArticlesPart from "@/components/parts/ArticlesPart.vue";
 import FooterComp from "@/components/blocks/FooterComp.vue";
+import BlackButtonPart from "@/components/parts/BlackButtonPart.vue";
 export default {
   name: "MainPage",
 
   data() {
-    return {};
+    return {
+      btnText: "Get Started",
+    };
   },
 
   mounted() {},
@@ -75,6 +62,7 @@ export default {
     ResultsBlock,
     ArticlesPart,
     FooterComp,
+    BlackButtonPart,
   },
 };
 </script>
