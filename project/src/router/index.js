@@ -10,8 +10,6 @@ import NotFoundPage from "@/pages/NotFoundPage";
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-  // base: '/',
-  // mode: 'history',
   routes: [
     {
       path: "/",
@@ -48,4 +46,7 @@ export const router = new VueRouter({
       redirect: { name: "NotFound" },
     },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
