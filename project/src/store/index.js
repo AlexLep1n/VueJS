@@ -1,5 +1,50 @@
 export default {
   state: {
+    // массивы
+    mainProjects: [
+      {
+        imgUrl: "./img/projects__top-left.png",
+        imgAlt: "kitchen",
+        heading: "Modern Kitchan",
+        breadcrumps: "Decor / Artchitecture",
+      },
+      {
+        imgUrl: "./img/projects__top-right.png",
+        imgAlt: "kitchen",
+        heading: "Modern Kitchan",
+        breadcrumps: "Decor / Artchitecture",
+      },
+      {
+        imgUrl: "./img/projects__bot-left.png",
+        imgAlt: "kitchen",
+        heading: "Modern Kitchan",
+        breadcrumps: "Decor / Artchitecture",
+      },
+      {
+        imgUrl: "./img/projects__bot-right.png",
+        imgAlt: "kitchen",
+        heading: "Modern Kitchan",
+        breadcrumps: "Decor / Artchitecture",
+      },
+    ],
+    results: [
+      {
+        number: 12,
+        description: "Years Of Experiance",
+      },
+      {
+        number: 85,
+        description: "Success Project",
+      },
+      {
+        number: 15,
+        description: "Active Project",
+      },
+      {
+        number: 95,
+        description: "Happy CUstomers",
+      },
+    ],
     projects: [
       {
         tab: "Bed Room",
@@ -232,6 +277,8 @@ export default {
         imgAlt: "project details",
       },
     ],
+
+    // переменные
     currentTagName: "Kitchen",
     currentTagIndex: 0,
   },
@@ -245,6 +292,12 @@ export default {
     },
 
     // геттеры массивов
+    mainProjects(state) {
+      return state.mainProjects;
+    },
+    results(state) {
+      return state.results;
+    },
     projects(state) {
       return state.projects;
     },
