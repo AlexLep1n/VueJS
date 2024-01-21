@@ -2,7 +2,7 @@
   <div :class="{ articles__cards: card, articles__cards_mb: cardMb }">
     <article
       class="articles__card"
-      v-for="article in newsArticles.slice(0, articlesNumber)"
+      v-for="article in paginatedArticles"
       :key="article.id"
     >
       <img class="articles__img" :src="article.imgUrl" :alt="article.imgAlt" />
@@ -12,7 +12,7 @@
           <h3 class="articles__card-heading">{{ article.cardHeading }}</h3>
           <p class="articles__card-txt">{{ article.cardDate }}</p>
         </div>
-        <router-link to="/articles">
+        <router-link to="/blog-details">
           <svg
             class="articles__arrow"
             xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +38,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+
 export default {
   name: "ArticlesComp",
   props: ["card", "cardMb", "articlesNumber"],
@@ -48,7 +49,7 @@ export default {
 
   methods: {},
   computed: {
-    ...mapGetters(["newsArticles"]),
+    ...mapGetters(["newsArticles", "paginatedArticles"]),
   },
   components: {},
 };

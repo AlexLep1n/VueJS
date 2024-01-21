@@ -42,7 +42,7 @@ export default {
       },
       {
         number: 95,
-        description: "Happy CUstomers",
+        description: "Happy Customers",
       },
     ],
     projects: [
@@ -240,6 +240,96 @@ export default {
         cardHeading: "Best For Any Office & Business Interior Solution",
         cardDate: "25 December,2022",
       },
+      {
+        imgUrl:
+          "https://hips.hearstapps.com/hmg-prod/images/kitchen-remodel-ideas-hbx120121kristinfine-008-1651168839.jpg",
+        imgAlt: "kitchen",
+        imgTitle: "Kitchan Design",
+        cardHeading: "Let’s Get Solution For Building Construction Work",
+        cardDate: "26 December,2022",
+      },
+      {
+        imgUrl:
+          "https://www.thespruce.com/thmb/S1aye-s9z6VRA58-V8oRLSQwKCc=/5100x0/filters:no_upscale():max_bytes(150000):strip_icc()/SPR-luxury-kitchens-5211364-hero-688d716970544978bc12abdf17ce6f83.jpg",
+        imgAlt: "kitchen",
+        imgTitle: "Living Design",
+        cardHeading: "Low Cost Latest Invented Interior Designing Ideas",
+        cardDate: "22 December,2022",
+      },
+      {
+        imgUrl:
+          "https://images.ctfassets.net/7rldri896b2a/4BPRFvvgspEZJ1VSH38xkH/b79caa38646dddf33a907d91ba82f71c/KI-HERO-DreamKitchenDSKsat.jpg",
+        imgAlt: "kitchen",
+        imgTitle: "Interior Design",
+        cardHeading: "Best For Any Office & Business Interior Solution",
+        cardDate: "25 December,2022",
+      },
+      {
+        imgUrl:
+          "https://assets-global.website-files.com/62457bfb9c62aac762b22c41/63d8ba90290dd493273a50c0_20%20Cowan%20Street%20%238.jpg",
+        imgAlt: "kitchen",
+        imgTitle: "Kitchan Design",
+        cardHeading: "Let’s Get Solution For Building Construction Work",
+        cardDate: "26 December,2022",
+      },
+      {
+        imgUrl:
+          "https://media.houseandgarden.co.uk/photos/649188c6d6a55acd0396e5f0/4:3/w_2220,h_1665,c_limit/HG-HAM-KateCox06468-CREDIT-TomGriffiths-TomGPhoto.jpg",
+        imgAlt: "kitchen",
+        imgTitle: "Living Design",
+        cardHeading: "Low Cost Latest Invented Interior Designing Ideas",
+        cardDate: "22 December,2022",
+      },
+      {
+        imgUrl:
+          "https://www.bhg.com/thmb/uinpkj2q8EK9K_T88xe1wDDxK6U=/8001x0/filters:no_upscale():strip_icc()/Mid_7009154_Shot_1_37copy_preview-01578d48ca284e238a275709af2ff954.jpg",
+        imgAlt: "kitchen",
+        imgTitle: "Interior Design",
+        cardHeading: "Best For Any Office & Business Interior Solution",
+        cardDate: "25 December,2022",
+      },
+      {
+        imgUrl: "img/news__img-1.png",
+        imgAlt: "kitchen",
+        imgTitle: "Kitchan Design",
+        cardHeading: "Let’s Get Solution For Building Construction Work",
+        cardDate: "26 December,2022",
+      },
+      {
+        imgUrl: "img/news__img-2.png",
+        imgAlt: "kitchen",
+        imgTitle: "Living Design",
+        cardHeading: "Low Cost Latest Invented Interior Designing Ideas",
+        cardDate: "22 December,2022",
+      },
+      {
+        imgUrl: "img/news__img-3.png",
+        imgAlt: "kitchen",
+        imgTitle: "Interior Design",
+        cardHeading: "Best For Any Office & Business Interior Solution",
+        cardDate: "25 December,2022",
+      },
+      {
+        imgUrl: "img/news__img-4.png",
+        imgAlt: "kitchen",
+        imgTitle: "Kitchan Design",
+        cardHeading: "Let’s Get Solution For Building Construction Work",
+        cardDate: "26 December,2022",
+      },
+      {
+        imgUrl: "img/news__img-5.png",
+        imgAlt: "kitchen",
+        imgTitle: "Living Design",
+        cardHeading: "Low Cost Latest Invented Interior Designing Ideas",
+        cardDate: "22 December,2022",
+      },
+      {
+        imgUrl: "img/news__img-6.png",
+        imgAlt: "kitchen",
+        imgTitle: "Interior Design",
+        cardHeading: "Best For Any Office & Business Interior Solution",
+        cardDate: "25 December,2022",
+      },
     ],
     tags: [
       {
@@ -277,10 +367,11 @@ export default {
         imgAlt: "project details",
       },
     ],
-
     // переменные
     currentTagName: "Kitchen",
     currentTagIndex: 0,
+    currentPage: 1,
+    perPage: 6,
   },
   getters: {
     // геттеры переменных
@@ -289,6 +380,12 @@ export default {
     },
     currentTagIndex(state) {
       return state.currentTagIndex;
+    },
+    currentPage(state) {
+      return state.currentPage;
+    },
+    perPage(state) {
+      return state.perPage;
     },
 
     // геттеры массивов
@@ -316,12 +413,20 @@ export default {
     swiperProjectDetails(state) {
       return state.swiperProjectDetails;
     },
+    paginationCount(state) {
+      return Math.ceil(state.newsArticles.length / state.perPage);
+    },
 
     // геттеры computed`ов
     selectedArticles(state) {
       return state.blogArticles.filter(
         (item) => item.tag === state.currentTagName
       );
+    },
+    paginatedArticles(state) {
+      const startIndex = (state.currentPage - 1) * state.perPage;
+      const endIndex = startIndex + state.perPage;
+      return state.newsArticles.slice(startIndex, endIndex);
     },
   },
   mutations: {
@@ -351,6 +456,19 @@ export default {
         state.tags[index].clicked = true;
       }
     },
+    SELECTED_PAGE(state, page) {
+      state.currentPage = page;
+    },
+    // PAGINATE__ARTICLES(state, page) {
+    //   state.currentPage = page;
+    //   const startIndex = (state.currentPage - 1) * state.perPage;
+    //   const endIndex = startIndex + state.perPage;
+    //   return state.newsArticles.slice(startIndex, endIndex);
+    // },
+    // PAGE_SELECT(state, pageNumber) {
+    //   state.currentPage = pageNumber;
+    //   state.$emit("pageSelect", this.currentPage);
+    // },
   },
   actions: {},
   modules: {},

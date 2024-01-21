@@ -1,9 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import MainPage from "@/pages/MainPage.vue";
-import ArticlesPage from "@/pages/ArticlesPage";
 import BlogPage from "@/pages/BlogPage";
-import ProjectsPage from "@/pages/ProjectsPage";
+import BlogDetailsPage from "@/pages/BlogDetailsPage";
+import ProjectPage from "@/pages/ProjectPage";
 import ProjectDetailsPage from "@/pages/ProjectDetailsPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
@@ -17,19 +17,19 @@ export const router = new VueRouter({
       component: MainPage,
     },
     {
-      path: "/articles",
-      name: "Articles",
-      component: ArticlesPage,
-    },
-    {
-      path: "/blog",
+      path: "/blog/:page?",
       name: "Blog",
       component: BlogPage,
     },
     {
-      path: "/projects",
-      name: "Projects",
-      component: ProjectsPage,
+      path: "/blog-details",
+      name: "Blog Details",
+      component: BlogDetailsPage,
+    },
+    {
+      path: "/project",
+      name: "Project",
+      component: ProjectPage,
     },
     {
       path: "/project-details",

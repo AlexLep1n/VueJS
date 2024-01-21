@@ -43,7 +43,7 @@
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
-  name: "BlogComp",
+  name: "BlogDetailsComp",
 
   data() {
     return {};

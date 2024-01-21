@@ -1,35 +1,44 @@
 <template>
   <div>
     <HeaderComp></HeaderComp>
-    <BannerComp :banner-url="banner"></BannerComp>
-    <BlogComp></BlogComp>
+    <PageTitle :title="title" :imgUrl="imgBackgroundUrl"></PageTitle>
+    <LatestPost></LatestPost>
+    <ArticlesComp></ArticlesComp>
     <FooterComp></FooterComp>
   </div>
 </template>
 
 <script>
-import HeaderComp from "@/components/blocks/HeaderComp.vue";
-import BannerComp from "@/components/blocks/BannerComp.vue";
-import BlogComp from "@/components/blocks/BlogComp.vue";
-import FooterComp from "@/components/blocks/FooterComp.vue";
+import HeaderComp from '@/components/blocks/HeaderComp.vue'
+import PageTitle from '@/components/blocks/PageTitle.vue'
+import LatestPost from '@/components/blocks/LatestPost.vue'
+import ArticlesComp from '@/components/blocks/ArticlesComp.vue'
+import FooterComp from '@/components/blocks/FooterComp.vue'
 
 export default {
-  name: "BlogPage",
-  data() {
+  name: 'ArticlesPage',
+
+  data () {
     return {
-      banner: "url(./img/blog-banner.jpg)",
-    };
+      title: 'Articles & News',
+      imgBackgroundUrl: 'url(./img/articles-page-title-background.jpg)'
+    }
   },
-  methods: {},
+
+  methods: {
+
+  },
 
   components: {
     HeaderComp,
-    BannerComp,
-    BlogComp,
-    FooterComp,
-  },
-};
+    PageTitle,
+    LatestPost,
+    ArticlesComp,
+    FooterComp
+  }
+}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped>
+
+</style>

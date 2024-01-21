@@ -5,9 +5,9 @@
       <ArticlesPart
         :card="true"
         :cardMb="true"
-        :articlesNumber="6"
+        :articlesNumber="currentPage"
       ></ArticlesPart>
-      <PaginationPart></PaginationPart>
+      <PaginationPart @pageSelect="selectPage"></PaginationPart>
     </div>
   </section>
 </template>
@@ -16,14 +16,22 @@
 import PaginationPart from "../parts/PaginationPart.vue";
 import ArticlesPart from "../parts/ArticlesPart.vue";
 import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 export default {
   name: "ArticlesComp",
 
   data() {
-    return {};
+    return {
+      currentPage: 1,
+    };
   },
 
-  methods: {},
+  methods: {
+    ...mapMutations(["SELECTED_PAGE"]),
+    selectPage(page) {
+      this.SELECTED_PAGE(page);
+    },
+  },
   computed: {
     ...mapGetters(["newsArticles"]),
   },

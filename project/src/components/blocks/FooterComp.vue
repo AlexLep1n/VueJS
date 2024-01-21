@@ -18,7 +18,7 @@
       <div class="footer__pages">
         <h4 class="footer__pages-heading">Pages</h4>
         <router-link to="/" class="footer__pages-link">Home</router-link>
-        <router-link to="/projects" class="footer__pages-link"
+        <router-link to="/project" class="footer__pages-link"
           >Project</router-link
         >
         <router-link to="/blog" class="footer__pages-link">Blog</router-link>

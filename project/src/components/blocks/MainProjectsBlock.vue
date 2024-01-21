@@ -24,7 +24,7 @@
               <h3 class="projects__card-heading">{{ project.heading }}</h3>
               <p class="projects__card-txt">{{ project.breadcrumps }}</p>
             </div>
-            <router-link to="/projects">
+            <router-link to="/project-details">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="70"

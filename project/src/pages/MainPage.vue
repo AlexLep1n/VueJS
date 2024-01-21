@@ -10,7 +10,7 @@
             There are many variations of the passages of lorem Ipsum
             fromavailable, majority.
           </p>
-          <BlackButtonPart :link="'/blog'" :btnText="btnText"></BlackButtonPart>
+          <BlackButtonPart :link="'/404'" :btnText="btnText"></BlackButtonPart>
         </div>
       </div>
     </section>
