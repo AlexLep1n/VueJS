@@ -56,16 +56,6 @@ export default {
       this.$emit("changeTab", data);
     },
   },
-
-  // computed: {
-  //   filteredTabs () {
-  //     if (this.clickTab()) {
-  //       return this.clickTab()
-  //     } else {
-  //       return this.tabs
-  //     }
-  //   }
-  // }
 };
 </script>
 

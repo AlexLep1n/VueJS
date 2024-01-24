@@ -3,10 +3,14 @@
     <div class="container">
       <h2 class="post__title">Latest Post</h2>
       <div class="post__card">
-        <img src="img/post-img.png" alt="kitchen" class="post__img" />
+        <img
+          :src="`${lastArticle.imgUrl}`"
+          :alt="`${lastArticle.imgAlt}`"
+          class="post__img"
+        />
         <div class="post__content">
           <h3 class="post__content-title">
-            Low Cost Latest Invented Interior Designing Ideas
+            {{ lastArticle.cardHeading }}
           </h3>
           <p class="post__content-first-txt">
             Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis
@@ -17,7 +21,9 @@
             classica.
           </p>
           <div class="post__date-box">
-            <p class="post__date-txt">26 December,2022</p>
+            <p class="post__date-txt">
+              {{ lastArticle.cardDate }}
+            </p>
             <router-link to="/blog-details">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +50,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "LatestPost",
 
@@ -54,6 +61,10 @@ export default {
   mounted() {},
 
   methods: {},
+
+  computed: {
+    ...mapGetters(["newsArticles", "lastArticle"]),
+  },
 };
 </script>
 

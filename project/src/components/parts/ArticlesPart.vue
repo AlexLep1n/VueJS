@@ -106,6 +106,7 @@ $txtColor: #4d5053;
   &__img {
     border: none;
     border-radius: 45px 45px 0 0;
+    width: 100%;
   }
 
   &__title {

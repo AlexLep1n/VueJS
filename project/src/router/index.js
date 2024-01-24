@@ -46,7 +46,11 @@ export const router = new VueRouter({
       redirect: { name: "NotFound" },
     },
   ],
-  scrollBehavior() {
-    return { x: 0, y: 0 };
+  scrollBehavior(to, from) {
+    if (to.name === "Blog" && from.name === "Blog") {
+      return;
+    } else {
+      return { x: 0, y: 0 };
+    }
   },
 });

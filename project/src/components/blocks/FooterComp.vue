@@ -2,17 +2,17 @@
   <footer class="footer">
     <div class="footer__flex container">
       <div class="footer__info">
-        <a href="index.html" class="footer__logo">
+        <router-link to="/" class="footer__logo">
           <img src="img/nav__img.svg" alt="logo" />
           <h3 class="nav__left-title">Interno</h3>
-        </a>
+        </router-link>
         <p class="footer__info-txt">
           It is a long established fact that a reader will be distracted
           lookings.
         </p>
-        <div class="footer__fa-links">
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-linkedin-in"></i>
+        <div class="footer__links">
+          <img src="img/twitter.svg" alt="twitter" class="twitter" />
+          <img src="img/linkedIn.svg" alt="linkedIn" class="linkedin" />
         </div>
       </div>
       <div class="footer__pages">
@@ -90,14 +90,15 @@ $txtColor: #4d5053;
     text-align: left;
   }
 
-  &__fa-links {
+  &__links {
     display: flex;
     gap: 54px;
   }
 
-  .fa-twitter,
-  .fa-linkedin-in {
-    font-size: 20px;
+  .twitter,
+  .linkedin {
+    width: 18px;
+    height: 22px;
   }
 
   &__pages {

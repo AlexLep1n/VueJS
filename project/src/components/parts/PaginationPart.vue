@@ -2,37 +2,41 @@
   <div class="pagination">
     <div class="pagination__flex">
       <div
-        v-for="pageNumber in paginationCount"
-        :key="pageNumber"
+        v-for="page in paginationCount"
+        :key="page"
         class="pagination__link"
-        @click="selectPage(pageNumber)"
+        @click="selectPage(page)"
       >
-        <router-link :to="`/blog/${pageNumber}`">0{{ pageNumber }}</router-link>
+        <router-link :to="`/blog/${page}`">0{{ page }}</router-link>
       </div>
-      <router-link to="/404" class="pagination__arrow">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="53"
-          height="52"
-          viewBox="0 0 53 52"
-          fill="none"
-        >
-          <circle cx="26.5" cy="26" r="25.5" stroke="#CDA274" />
-          <path
-            d="M23.5571 32L29.5 25.3143L23.5571 18.6286"
-            stroke="#292F36"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </router-link>
+      <div @click="nextPage()">
+        <router-link :to="`/blog/${currentPage}`" class="pagination__arrow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="53"
+            height="52"
+            viewBox="0 0 53 52"
+            fill="none"
+          >
+            <circle cx="26.5" cy="26" r="25.5" stroke="#CDA274" />
+            <path
+              d="M23.5571 32L29.5 25.3143L23.5571 18.6286"
+              stroke="#292F36"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
+
 export default {
   name: "PaginationPart",
 
@@ -42,8 +46,12 @@ export default {
   mounted() {},
 
   methods: {
-    selectPage(pageNumber) {
-      this.$emit("selectPage", pageNumber);
+    ...mapMutations(["SELECTED_PAGE", "NEXT_PAGE"]),
+    selectPage(page) {
+      this.SELECTED_PAGE(page);
+    },
+    nextPage() {
+      this.NEXT_PAGE();
     },
   },
 
